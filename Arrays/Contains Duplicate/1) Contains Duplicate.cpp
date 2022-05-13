@@ -10,28 +10,30 @@ unordered_map<int, int> Freq;
 //Runtime: 150 ms, faster than 26.68% of C++ online submissions for Contains Duplicate.
 //Memory Usage: 53.4 MB, less than 21.33% of C++ online submissions for Contains Duplicate.
 
-	 bool containsDuplicate(vector<int>& nums) {
-         unordered_map<int, int> Freq;
+	 int missingNumber(vector<int>& nums) {
 
-	  	for (int i=0;i<nums.size();i++)
-	  	{
-	 		
-	  			Freq[nums[i]] ++;
+        unordered_map <int,int> Freq;
+        int size=nums.size();
+        
+        for (int i=0;i<=size;i++)
+        {
+            Freq[i]++;
+        }
 
-	  	}
+        for (int i=0;i<=size;i++)
+        {
+            Freq[nums[i]]++;
+        }
 
-	  	unordered_map<int, int>:: iterator itr = Freq.begin();
+       unordered_map<int, int>:: iterator itr = Freq.begin();
 
 	  	for (itr = Freq.begin();itr!=Freq.end();itr++)
-	  	{		//cout<<itr->first<<itr->second<<endl;
-	  			  if (itr->second>1)
-	  			  	return true;
+	  	{		cout<<itr->first<<itr->second<<endl;
+	  			  if (itr->second==1)
+	  			  	return itr->first;
 	  	}
-
-	  	return false;    
-
-          }
-
+        return 0;    
+    }
 
 
 
