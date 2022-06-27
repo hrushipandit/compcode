@@ -26,7 +26,6 @@ vector<int> spiralOrder(vector<vector<int>>& matrix) {
 				j++;	
 			}
 
-
 			j--;
 			i++;
 
@@ -49,7 +48,6 @@ vector<int> spiralOrder(vector<vector<int>>& matrix) {
 			}	
 
 			j++;
-
 			i--;
 
 			while (i>=0 && visited.find(matrix[i][j])==visited.end())
